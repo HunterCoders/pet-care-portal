@@ -1,0 +1,98 @@
+.container {
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  display: grid;
+  max-width: 800px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff33; /* Changed background color to white */
+}
+
+h1 {
+  text-align: center;
+  /* margin-bottom: 20px; */
+}
+
+.food-list {
+  display: grid; /* Changed to grid for better layout control */
+  grid-template-columns: auto auto; /* Responsive grid */
+  gap: 20px;
+}
+
+.food-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  align-items: center; /* Center content horizontally */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.food-item:hover {
+  background-color: rgba(76, 118, 197, 0.1); /* Adjusted hover color */
+}
+
+.food-item img {
+  width: 100%;
+  max-height: 150px; /* Limit image height */
+  object-fit: cover;
+  border-radius: 5px 5px 0 0; /* Rounded corners for top */
+}
+
+.food-details {
+  flex: 1;
+  text-align: center; /* Center align text */
+}
+
+.selected-food {
+  margin-top: 20px;
+  background-color: #74a3dc2f; /* Light gray background */
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid white;
+  width: auto;
+}
+
+.selected-food h2 {
+  margin-bottom: 10px;
+  text-align: center; /* Center align heading */
+}
+
+.selected-food label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.selected-food input[type="number"],
+.selected-food input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px; /* Add spacing between inputs */
+  margin-right: 20px;
+}
+
+.selected-food p {
+  margin: 5px 0;
+}
+
+.selected-food button {
+  width: 95%; /* Button takes full width */
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.selected-food button:hover {
+  background-color: #0056b3;
+}

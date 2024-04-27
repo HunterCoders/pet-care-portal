@@ -1,0 +1,183 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Homepage.css */
+
+/* Gradient ball animation */
+@keyframes moveGradientBall {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(var(--translate-x), var(--translate-y));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Styling for gradient balls */
+.gradient-ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  animation: moveGradientBall 5s ease-in-out infinite;
+}
+
+/* Gradient styles */
+.gradient-ball:nth-child(1) {
+  background: radial-gradient(circle at 10% 10%, #00d0ff, transparent);
+  --translate-x: 20px;
+  --translate-y: 20px;
+}
+
+.gradient-ball:nth-child(2) {
+  background: radial-gradient(circle at 80% 20%, #00ff00, transparent);
+  --translate-x: -20px;
+  --translate-y: 20px;
+}
+
+.gradient-ball:nth-child(3) {
+  background: radial-gradient(circle at 50% 50%, #0000ff, transparent);
+  --translate-x: 10px;
+  --translate-y: -20px;
+}
+
+.gradient-ball:nth-child(4) {
+  background: radial-gradient(circle at 80% 80%, #ff00ff, transparent);
+  --translate-x: -30px;
+  --translate-y: 30px;
+}
+
+.gradient-ball:nth-child(5) {
+  background: radial-gradient(circle at 20% 80%, #ffff00, transparent);
+  --translate-x: 40px;
+  --translate-y: -40px;
+}
+
+.gradient-ball:nth-child(6) {
+  background: radial-gradient(circle at 80% 20%, #00ffff, transparent);
+  --translate-x: -10px;
+  --translate-y: -30px;
+}
+
+.gradient-ball:nth-child(7) {
+  background: radial-gradient(circle at 30% 70%, #ff6600, transparent);
+  --translate-x: 50px;
+  --translate-y: 20px;
+}
+
+.gradient-ball:nth-child(8) {
+  background: radial-gradient(circle at 70% 30%, #6600cc, transparent);
+  --translate-x: -30px;
+  --translate-y: -10px;
+}
+
+.gradient-ball:nth-child(9) {
+  background: radial-gradient(circle at 70% 20%, #ff0066, transparent);
+  --translate-x: 20px;
+  --translate-y: -50px;
+}
+
+.gradient-ball:nth-child(10) {
+  background: radial-gradient(circle at 20% 60%, #339966, transparent);
+  --translate-x: -40px;
+  --translate-y: 40px;
+}
+
+.gradient-ball:nth-child(11) {
+  background: radial-gradient(circle at 40% 90%, #663300, transparent);
+  --translate-x: 10px;
+  --translate-y: -20px;
+}
+
+.gradient-ball:nth-child(12) {
+  background: radial-gradient(circle at 90% 50%, #996600, transparent);
+  --translate-x: -30px;
+  --translate-y: 40px;
+}
+
+.gradient-ball:nth-child(13) {
+  background: radial-gradient(circle at 60% 70%, #9900cc, transparent);
+  --translate-x: 30px;
+  --translate-y: -30px;
+}
+
+.gradient-ball:nth-child(14) {
+  background: radial-gradient(circle at 50% 10%, #6600ff, transparent);
+  --translate-x: -40px;
+  --translate-y: 20px;
+}
+
+.gradient-ball:nth-child(15) {
+  background: radial-gradient(circle at 80% 60%, #ff99cc, transparent);
+  --translate-x: 20px;
+  --translate-y: -50px;
+}
+
+.gradient-ball:nth-child(16) {
+  background: radial-gradient(circle at 10% 40%, #99ff33, transparent);
+  --translate-x: -30px;
+  --translate-y: 40px;
+}
+
+.gradient-ball:nth-child(17) {
+  background: radial-gradient(circle at 30% 80%, #ff3366, transparent);
+  --translate-x: 50px;
+  --translate-y: -10px;
+}
+
+.gradient-ball:nth-child(18) {
+  background: radial-gradient(circle at 90% 30%, #6699ff, transparent);
+  --translate-x: -40px;
+  --translate-y: 30px;
+}
+
+.gradient-ball:nth-child(19) {
+  background: radial-gradient(circle at 70% 50%, #ff9900, transparent);
+  --translate-x: 20px;
+  --translate-y: -20px;
+}
+
+.gradient-ball:nth-child(20) {
+  background: radial-gradient(circle at 40% 10%, #66cc00, transparent);
+  --translate-x: -10px;
+  --translate-y: 40px;
+}

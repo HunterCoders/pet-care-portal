@@ -1,0 +1,48 @@
+/* DoctorAppointmentsPage.css */
+
+.container {
+    margin-top: 50px;
+    backdrop-filter: blur(5px);
+
+    
+
+  }
+  .appointment-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .completed {
+    background-color: rgba(144, 238, 144, 0.105);
+  }
+  
+  .pending {
+    background-color: rgba(240, 128, 128, 0.115);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .appointments-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .appointment-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .appointment-item h2 {
+    margin-top: 0;
+  }
+  
+  .appointment-item p {
+    margin: 10px 0;
+  }
+  
+  

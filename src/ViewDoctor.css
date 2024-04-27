@@ -1,0 +1,34 @@
+.container {
+    max-width: 800px;
+    /* margin: 0 auto; */
+    padding: 20px;
+    backdrop-filter: blur(5px);
+
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .doctors-list {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .doctor-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  
+  .doctor-item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .doctor-item p {
+    margin: 5px 0;
+  }
+  
