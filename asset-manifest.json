@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/pet-care-portal/static/css/main.83486320.css",
-    "main.js": "/pet-care-portal/static/js/main.3ffd7d7a.js",
-    "static/js/453.0c560849.chunk.js": "/pet-care-portal/static/js/453.0c560849.chunk.js",
-    "static/media/logo.png": "/pet-care-portal/static/media/logo.600d6609c4bb83e5a08b.png",
-    "static/media/jpg": "/pet-care-portal/static/media/6054bdf56322043fd21bd5402.967a942de1fae5d8d59b.jpg",
-    "static/media/1714296180302.jpg": "/pet-care-portal/static/media/1714296180302.967a942de1fae5d8d59b.jpg",
-    "static/media/1714296080313.jpg": "/pet-care-portal/static/media/1714296080313.78c39b8b8f4c953d44b0.jpg",
-    "static/media/background_image.jpg": "/pet-care-portal/static/media/background_image.8ac45975cde08d7b83aa.jpg",
-    "index.html": "/pet-care-portal/index.html",
-    "main.83486320.css.map": "/pet-care-portal/static/css/main.83486320.css.map",
-    "main.3ffd7d7a.js.map": "/pet-care-portal/static/js/main.3ffd7d7a.js.map",
-    "453.0c560849.chunk.js.map": "/pet-care-portal/static/js/453.0c560849.chunk.js.map"
+    "main.css": "/static/css/main.1927e6c8.css",
+    "main.js": "/static/js/main.185a4637.js",
+    "static/js/453.0c560849.chunk.js": "/static/js/453.0c560849.chunk.js",
+    "static/media/JPG": "/static/media/8d4269d2c7213c373cafe3d00.accfe98b2d166df2dcf4.JPG",
+    "static/media/PetCareLogo.png": "/static/media/PetCareLogo.28fd562d83faa672b8b5.png",
+    "static/media/jpg": "/static/media/7f6aa0773a59c02c912220401.79482ce4046f48682b34.jpg",
+    "static/media/jpeg": "/static/media/f5ee844d3660239d991775600.90ff7883b97570ad5f47.jpeg",
+    "index.html": "/index.html",
+    "main.1927e6c8.css.map": "/static/css/main.1927e6c8.css.map",
+    "main.185a4637.js.map": "/static/js/main.185a4637.js.map",
+    "453.0c560849.chunk.js.map": "/static/js/453.0c560849.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83486320.css",
-    "static/js/main.3ffd7d7a.js"
+    "static/css/main.1927e6c8.css",
+    "static/js/main.185a4637.js"
   ]
 }
