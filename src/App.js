@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/pet-care-portal" element={<Homepage />} />
         <Route path="/adminOptions" element={<AdminOptionsPage />} />
         <Route path="/docRegister" element={<DocRegister />} />
         <Route path="/cusRegister" element={<CusRegister />} />
