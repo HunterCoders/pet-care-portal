@@ -14,7 +14,7 @@ function BookAppointment() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/doctors");
+        const response = await axios.get("/api/doctors");
         console.log("Fetched doctors:", response.data);
         setDoctors(response.data);
       } catch (error) {

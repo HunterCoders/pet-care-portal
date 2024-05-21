@@ -8,7 +8,7 @@ const ViewAppointmentsPage = () => {
   useEffect(() => {
     // Fetch appointments data from the server
     axios
-      .get("http://localhost:3001/appointments",{ withCredentials: true })
+      .get("/appointments",{ withCredentials: true })
       .then((response) => {
         setAppointments(response.data);
       })

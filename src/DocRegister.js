@@ -33,7 +33,7 @@ function DocRegister() {
   return (
     <>
       <form onSubmit={checkParams}
-        action="http://localhost:3001/DocRegister"
+        action="/DocRegister"
         method="post"
         className="register-form"
       >

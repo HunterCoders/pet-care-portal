@@ -8,7 +8,7 @@ const ViewDoctorsPage = () => {
   useEffect(() => {
     // Fetch doctors data from the server
     axios
-      .get("http://localhost:3001/adminapi/doctors", { withCredentials: true })
+      .get("/adminapi/doctors", { withCredentials: true })
       .then((response) => {
         setDoctors(response.data);
       })

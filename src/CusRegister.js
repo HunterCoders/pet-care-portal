@@ -31,7 +31,7 @@ function CusRegister() {
     return (
       <>
         <form onSubmit={checkParams}
-          action="http://localhost:3001/CusRegister"
+          action="/CusRegister"
           method="post"
           className="register-form"
         >

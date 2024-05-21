@@ -36,7 +36,7 @@ class AddFoodPage extends React.Component {
       <div className="container">
         <form
           onSubmit={this.checkParams}
-          action="http://localhost:3001/addFood"
+          action="/addFood"
           method="post"
           encType="multipart/form-data"
           className="form-container"

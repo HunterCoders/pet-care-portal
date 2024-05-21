@@ -40,7 +40,7 @@ const BuyFoodPage = () => {
   // Fetch food data from MongoDB on component mount
   useEffect(() => {
     axios
-      .get("http://localhost:3001/foods")
+      .get("/foods")
       .then((response) => {
         setFoods(response.data);
       })
@@ -68,7 +68,7 @@ const BuyFoodPage = () => {
   return (
     <div className="container">
       <h1>Buy Food</h1><br></br>
-      <form action="http://localhost:3001/addorder" method="post">
+      <form action="/addorder" method="post">
         <div className="food-list">
           {foods.map((food, index) => (
             <div

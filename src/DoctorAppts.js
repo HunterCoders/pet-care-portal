@@ -11,7 +11,7 @@ const DoctorAppointmentsPage = () => {
   useEffect(() => {
     // Fetch appointments data for the doctorName from the server
     axios
-      .get(`http://localhost:3001/appointments/${doctorName}`)
+      .get(`/appointments/${doctorName}`)
       .then((response) => {
         setAppointments(response.data);
       })

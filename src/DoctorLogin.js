@@ -6,7 +6,7 @@ function DocLogin() {
     let [param]=useSearchParams();
     return (
         <div className="login-container">
-            <form className="login-form" action='http://localhost:3001/docloginNode' method='post'>
+            <form className="login-form" action='/docloginNode' method='post'>
             <h1 style={{textAlign:'center'}}>Doctor Login</h1>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>

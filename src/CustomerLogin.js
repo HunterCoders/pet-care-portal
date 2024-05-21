@@ -6,7 +6,7 @@ function CustomerLogin() {
     let [param]=useSearchParams();
     return (
         <div className="login-container">
-            <form className="login-form" action='http://localhost:3001/cusloginNode' method='post'>
+            <form className="login-form" action='/cusloginNode' method='post'>
             <h1 style={{textAlign:'center'}}>Login YourSelf</h1>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>

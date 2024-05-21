@@ -8,7 +8,7 @@ const AdminOrdersPage = () => {
   useEffect(() => {
     // Fetch orders data from the server
     axios
-      .get("http://localhost:3001/adminorders",{ withCredentials: true })
+      .get("/adminorders",{ withCredentials: true })
       .then((response) => {
         setOrders(response.data);
       })
@@ -20,7 +20,7 @@ const AdminOrdersPage = () => {
   const handleDeleteOrder = async (orderId) => {
     try {
       // Send a DELETE request to the server to delete the order
-      await axios.delete(`http://localhost:3001/ordersDelete/${orderId}`);
+      await axios.delete(`/ordersDelete/${orderId}`);
 
       // Filter out the deleted order from the local state
       setOrders(orders.filter((order) => order._id !== orderId));
