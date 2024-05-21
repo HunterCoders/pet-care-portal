@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 import "./DoctorAppointmentsPage.css";
+import { Link } from "react-router-dom";
 
 const DoctorAppointmentsPage = () => {
   const [appointments, setAppointments] = useState([]);
@@ -18,14 +19,14 @@ const DoctorAppointmentsPage = () => {
       .catch((error) => {
         console.error("Error fetching appointments:", error);
       });
-  }, []);
+  }, [doctorName]);
 
   const handleMarkComplete = async (id) => {
     try {
       // Send a PATCH request to mark the appointment as complete
-      await axios.patch(`http://localhost:3001/updateappointments/${id}`, {
+      await axios.patch(`/updateappointments/${id}`, {
         completed: true,
-      });
+      },{withCredentials:true});
 
       // Update the local state to reflect the change
       setAppointments((prevAppointments) =>
@@ -41,6 +42,15 @@ const DoctorAppointmentsPage = () => {
   };
 
   return (
+    <div className="parentContainer">
+    <div className="btnContainer">
+      <div></div>
+      <div>
+      <button>
+        <Link to="/">Logout</Link>
+      </button>
+      </div>
+    </div>
     <div className="container">
       <h1>Doctor Appointments</h1>
       <div className="appointments-list">
@@ -64,6 +74,7 @@ const DoctorAppointmentsPage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

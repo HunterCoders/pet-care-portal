@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ViewOrderPage.css";
+import { Link } from "react-router-dom";
 
 const ViewOrdersPage = () => {
   const [orders, setOrders] = useState([]);
@@ -30,6 +31,28 @@ const ViewOrdersPage = () => {
   };
 
   return (
+    <div className="parentContainer">
+    <div className="btnContainer">
+      <div>
+      <button>
+        <Link to="/buyFood">Buy Food</Link>
+      </button>
+      <button>
+        <Link to="/getDoctor">Book Doctor</Link>
+      </button>
+      <button>
+        <Link to="/viewOrders">View Orders</Link>
+      </button>
+      <button>
+        <Link to="/viewAppt">View Appointments</Link>
+      </button>
+    </div>
+    <div>
+      <button>
+        <Link to="/">Logout</Link>
+      </button>
+    </div>
+  </div>
     <div className="container">
       <h1>View Orders</h1>
       <div className="orders-list">
@@ -44,6 +67,7 @@ const ViewOrdersPage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function BookAppointment() {
   let [param] = useSearchParams();
@@ -14,23 +14,15 @@ function BookAppointment() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        console.log('Fetching Doctors React');
-        const response = await axios.get("/getdoctors");
-        console.log("Response data:", response.data);
-        if (Array.isArray(response.data)) {
-          console.log("Fetched doctors:", response.data);
-          setDoctors(response.data);
-        } else {
-          console.error("Unexpected response data:", response.data);
-          setDoctors([]);  // Default to an empty array if data is not an array
-        }
+        const response = await axios.get("/getdoctors",{withCredentials:true});
+        console.log("Fetched doctors:", response.data);
+        setDoctors(response.data);
       } catch (error) {
         console.error("Error fetching doctors:", error);
-        setDoctors([]);  // Default to an empty array in case of error
       }
     };
     fetchDoctors();
-  },[]); // Empty dependency array, so it runs only once on component mount
+  }, []);
 
   const checkParams = (event) => {
     setErr("");
@@ -44,11 +36,36 @@ function BookAppointment() {
       setErr("All Fields are required");
       return;
     }
+    if (new Date(apptDate) < Date.now()) {
+      setErr("Invalid Date. Select a later date!!!!");
+      return;
+    }
     event.target.submit();
   };
 
   return (
-    <>
+    <div className="parentContainer">
+    <div className="btnContainer">
+      <div>
+    <button>
+      <Link to="/buyFood">Buy Food</Link>
+    </button>
+    <button>
+      <Link to="/getDoctor">Book Doctor</Link>
+    </button>
+    <button>
+      <Link to="/viewOrders">View Orders</Link>
+    </button>
+    <button>
+      <Link to="/viewAppt">View Appointments</Link>
+    </button>
+    </div>
+    <div>
+    <button>
+      <Link to="/">Logout</Link>
+    </button>
+    </div>
+  </div>
       <form
         onSubmit={checkParams}
         action="/createAppt"
@@ -109,20 +126,20 @@ function BookAppointment() {
         <br></br>
         <br></br>
         {Err && (
-          <div style={{ color: "red" }} className="already">
+          <div style={{ color: "maroon" }} className="already">
             {Err}
           </div>
         )}
         {param.get("param") === "err" && (
           <div
             className="registered"
-            style={{ color: "red", textAlign: "center" }}
+            style={{ color: "maroon", textAlign: "center",boxShadow:"1 px black" }} 
           >
-            The doctor is booked for the day!! Choose another date
+            The doctor is booked for the day!! Choose other date
           </div>
         )}
       </form>
-    </>
+    </div>
   );
 }
 

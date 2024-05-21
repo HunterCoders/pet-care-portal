@@ -3,11 +3,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./BuyFoodPage.css";
-import { useSearchParams} from 'react-router-dom';
+import { Link, useSearchParams} from 'react-router-dom';
 
 
-// Function to import all images from a directory
-// Function to import all images from a directory and sort them by upload time
 function importAll(r) {
   const images = r.keys().map((key) => {
     const fileName = key.split("/").pop(); // Extract the filename from the path
@@ -23,7 +21,6 @@ function importAll(r) {
 
   return images.map((img) => img.src);
 }
-
 
 
 const images = importAll(require.context("./uploads", false, /\.(jpe?g|svg|JPG)$/));
@@ -66,6 +63,28 @@ const BuyFoodPage = () => {
 
 
   return (
+    <div className="parentContainer">
+    <div className="btnContainer">
+    <div>
+    <button>
+      <Link to="/buyFood">Buy Food</Link>
+    </button>
+    <button>
+      <Link to="/getDoctor">Book Doctor</Link>
+    </button>
+    <button>
+      <Link to="/viewOrders">View Orders</Link>
+    </button>
+    <button>
+      <Link to="/viewAppt">View Appointments</Link>
+    </button>
+    </div>
+    <div>
+    <button>
+      <Link to="/">Logout</Link>
+    </button>
+    </div>
+  </div>
     <div className="container">
       <h1>Buy Food</h1><br></br>
       <form action="/addorder" method="post">
@@ -131,6 +150,7 @@ const BuyFoodPage = () => {
                 }
       </form>
       
+    </div>
     </div>
   );
 };

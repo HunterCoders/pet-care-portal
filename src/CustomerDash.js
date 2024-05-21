@@ -7,6 +7,28 @@ import { Link, useSearchParams } from "react-router-dom";
 const CustomerOptionsPage = () => {
   const [params] = useSearchParams();
   return (
+    <div className="parentContainer">
+    <div className="btnContainer">
+      <div className="left">
+        <button>
+          <Link to="/buyFood">Buy Food</Link>
+        </button>
+        <button>
+          <Link to="/getDoctor">Book Doctor</Link>
+        </button>
+        <button>
+          <Link to="/viewOrders">View Orders</Link>
+        </button>
+        <button>
+          <Link to="/viewAppt">View Appointments</Link>
+        </button>
+      </div>
+      <div className="right">
+      <button>
+          <Link to="/">Logout</Link>
+        </button>
+      </div>
+      </div>
     <div className="container">
       <h1>Customer DashBoard</h1>
       <div className="grid-container">
@@ -70,6 +92,7 @@ const CustomerOptionsPage = () => {
           Appointment Success
         </div>
       )}
+    </div>
     </div>
   );
 };

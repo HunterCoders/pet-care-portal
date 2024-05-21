@@ -6,7 +6,7 @@ function DocLogin() {
     let [param]=useSearchParams();
     return (
         <div className="login-container">
-            <form className="login-form" action='/docloginNode' method='post'>
+            <form className="login-form" action='http://localhost:3001/docloginNode' method='post'>
             <h1 style={{textAlign:'center'}}>Doctor Login</h1>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>
@@ -16,9 +16,9 @@ function DocLogin() {
                     <label htmlFor="password">Password:</label>
                     <input type="password" name='pass' id="password" className="form-control" placeholder="Enter your password" />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group"> */}
                     <button type="submit" className="btn-submit">Login</button>
-                </div>
+                {/* </div> */}
                 {
                     param.get('param')==='reg' &&(
                         <div className='registered' style={{color:'green',textAlign:'center'}}>Registration Success!! Login</div>

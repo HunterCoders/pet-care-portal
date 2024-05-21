@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './ViewDoctor.css';
+import { Link } from "react-router-dom";
 
 const ViewDoctorsPage = () => {
   const [doctors, setDoctors] = useState([]);
@@ -18,6 +19,28 @@ const ViewDoctorsPage = () => {
   }, []);
 
   return (
+    <div className="parentContainer">
+    <div className="btnContainer">
+      <div>
+    <button>
+      <Link to="/viewDocs">View Doctors</Link>
+    </button>
+    <button>
+      <Link to="/addFood">Add Food</Link>
+    </button>
+    <button>
+      <Link to="/adminOrders">View Orders</Link>
+    </button>
+    <button>
+      <Link to="/viewAdminAppts">View Appointments</Link>
+    </button>
+    </div>
+    <div>
+    <button>
+      <Link to="/">Logout</Link>
+    </button>
+    </div>
+    </div>
     <div className="container">
       <h1>View Doctors</h1>
       <div className="doctors-list">
@@ -29,6 +52,7 @@ const ViewDoctorsPage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

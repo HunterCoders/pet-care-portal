@@ -5,6 +5,7 @@ import DocLogin from './DoctorLogin';
 import CusRegister from './CusRegister';
 import DocRegister from './DocRegister';
 import CustomerLogin from './CustomerLogin';
+import AdminLogin from './AdminLogin';
 import AddFoodPage from './AddFoodPage';
 import CustomerOptionsPage from './CustomerDash';
 import BuyFoodPage from './BuyFood';
@@ -28,6 +29,7 @@ function App() {
         <Route path="/cusRegister" element={<CusRegister />} />
         <Route path="/doclogin" element={<DocLogin />} />
         <Route path="/cusLogin" element={<CustomerLogin />} />
+        <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/addFood" element={<AddFoodPage />} />
         <Route path="/cusHome" element={<CustomerOptionsPage />} />
         <Route path="/buyFood" element={<BuyFoodPage />} />

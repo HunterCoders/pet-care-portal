@@ -33,6 +33,28 @@ class AddFoodPage extends React.Component {
 
   render() {
     return (
+      <div className="parentContainer">
+      <div className="btnContainer">
+        <div>
+      <button>
+        <Link to="/viewDocs">View Doctors</Link>
+      </button>
+      <button>
+        <Link to="/addFood">Add Food</Link>
+      </button>
+      <button>
+        <Link to="/adminOrders">View Orders</Link>
+      </button>
+      <button>
+        <Link to="/viewAdminAppts">View Appointments</Link>
+      </button>
+      </div>
+      <div>
+    <button>
+      <Link to="/">Logout</Link>
+    </button>
+    </div>
+    </div>
       <div className="container">
         <form
           onSubmit={this.checkParams}
@@ -97,6 +119,7 @@ class AddFoodPage extends React.Component {
           </div>
           
         </form>
+      </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Homepage.css";
-import logo from "./PetCareLogo.png";
+import logo from "./logo.png";
 import { Link } from "react-router-dom";
 function Homepage() {
   return (
@@ -53,14 +53,14 @@ function Homepage() {
             <h2>Admin</h2>
             <p>Access admin features</p>
             <button>
-              <Link to="/adminOptions">Login</Link>
+              <Link to="/adminLogin">Login</Link>
             </button>
           </div>
         </section>
       </main>
-      <div className="footer">
+      {/* <div className="footer">
         <p>&copy; 2024 Pet Palace</p>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -6,6 +6,28 @@ import { Link } from 'react-router-dom';
 
 const AdminOptionsPage = () => {
   return (
+    <div className="parentContainer">
+    <div className="btnContainer">
+      <div>
+    <button>
+      <Link to="/viewDocs">View Doctors</Link>
+    </button>
+    <button>
+      <Link to="/addFood">Add Food</Link>
+    </button>
+    <button>
+      <Link to="/adminOrders">View Orders</Link>
+    </button>
+    <button>
+      <Link to="/viewAdminAppts">View Appointments</Link>
+    </button>
+    </div>
+    <div>
+    <button>
+      <Link to="/">Logout</Link>
+    </button>
+    </div>
+  </div>
     <div className="container">
       <h1>Admin DashBoard</h1>
       <div className="grid-container">
@@ -53,6 +75,7 @@ const AdminOptionsPage = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

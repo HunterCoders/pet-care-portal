@@ -1,13 +1,13 @@
 import React from 'react';
 import './login.css';
-import { useSearchParams,Link } from 'react-router-dom';
+import { useSearchParams} from 'react-router-dom';
 
-function CustomerLogin() {
+function AdminLogin() {
     let [param]=useSearchParams();
     return (
         <div className="login-container">
-            <form className="login-form" action='/cusloginNode' method='post'>
-            <h1 style={{textAlign:'center'}}>CUSTOMER LOGIN</h1>
+            <form className="login-form" action='/adminloginNode' method='post'>
+            <h1 style={{textAlign:'center'}}>ADMIN LOGIN</h1>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>
                     <input type="text" id="username" name='uname' className="form-control" placeholder="Enter your username" />
@@ -34,12 +34,9 @@ function CustomerLogin() {
                         <div className='registered' style={{color:'red',textAlign:'center'}}>Login First</div>
                     )
                 }
-                <div className='already-registered'>
-                    Not Registered? Click <Link style={{color:'mediumblue'}} to='/cusregister'>Here</Link>
-                </div>
             </form>
         </div>
     );
 }
 
-export default CustomerLogin;
+export default AdminLogin;

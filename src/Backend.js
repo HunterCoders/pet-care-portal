@@ -332,14 +332,27 @@ app.delete("/appointmentsDelete/:id", async (req, res) => {
   const appointmentId = req.params.id;
   try {
     await Appointment.findByIdAndDelete(appointmentId);
-    res.sendStatus(204);
+    res.status(204);
   } catch (error) {
     console.error("Error deleting appointment:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-app.put("/appointments/:id", async (req, res) => {
+app.get("/appointments/:name", async (req, res) => {
+  const doctorName = req.params.name;
+  try {
+    console.log('Fecthing Appts :',doctorName);
+    const appt=await Appointment.find({doctorName:doctorName});
+    res.json(appt);
+  } catch (error) {
+    console.error("Error deleting appointment:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+app.patch("/updateappointments/:id", async (req, res) => {
+  console.log('Updated');
   const appointmentId = req.params.id;
   const { completed } = req.body;
   try {
