@@ -236,6 +236,7 @@ app.get('/get-customer-id', (req, res) => {
 
 app.get('/api/doctors', async (req, res) => {
   try {
+    console.log('Fetched Doctors');
     const doctors = await Doctor.find({}, 'docName');
     res.json(doctors);
   } catch (err) {
