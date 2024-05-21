@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams,Link } from "react-router-dom";
 import "./DoctorAppointmentsPage.css";
-import { Link } from "react-router-dom";
 
 const DoctorAppointmentsPage = () => {
   const [appointments, setAppointments] = useState([]);
@@ -12,20 +11,21 @@ const DoctorAppointmentsPage = () => {
   useEffect(() => {
     // Fetch appointments data for the doctorName from the server
     axios
-      .get(`/appointments/${doctorName}`)
+      .get(`/appointments/${doctorName}`,{ withCredentials: true })
       .then((response) => {
+        console.log(response.data);
         setAppointments(response.data);
       })
       .catch((error) => {
         console.error("Error fetching appointments:", error);
       });
-  }, [doctorName]);
+  }, []);
 
   const handleMarkComplete = async (id) => {
     try {
       // Send a PATCH request to mark the appointment as complete
       await axios.patch(`/updateappointments/${id}`, {
-        completed: true,
+        completed: true
       },{withCredentials:true});
 
       // Update the local state to reflect the change
@@ -40,7 +40,6 @@ const DoctorAppointmentsPage = () => {
       console.error("Error marking appointment as complete:", error);
     }
   };
-
   return (
     <div className="parentContainer">
     <div className="btnContainer">
