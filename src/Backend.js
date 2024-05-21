@@ -176,7 +176,7 @@ app.post('/cusloginNode', async (req, res) => {
     const customer = await Customer.findOne({ cusEmail: uname, cusPass: pass });
     if (customer) {
       req.session.userId = customer._id;
-      return res.redirect(`${process.env.CLIENT_BASE_URL}/cusHome?name=${encodeURIComponent(customer.cusName)}`);
+      return res.redirect(`/cusHome?name=${encodeURIComponent(customer.cusName)}`);
     } else {
       return res.redirect('/cusLogin?param=invalid');
     }
