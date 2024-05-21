@@ -327,7 +327,14 @@ app.delete("/ordersDelete/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
+app.get("/adminapi/doctors", async (req, res) => {
+  try {
+    const doctors = await Doctor.find({}, "docName docEmail docLicNo");
+    res.json(doctors);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 app.delete("/appointmentsDelete/:id", async (req, res) => {
   const appointmentId = req.params.id;
   try {
