@@ -338,6 +338,22 @@ app.delete("/appointmentsDelete/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+app.post("/adminloginNode", async (req, res) => {
+  try {
+    const { uname, pass } = req.body;
+    console.log(req.body.uname)
+    if (uname == 'admin' && pass=='admin') {
+      return res.redirect(
+          `/adminOptions`
+        );
+    } else {
+        return res.redirect("/adminLogin?param=invalid");
+      }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 app.get("/appointments/:name", async (req, res) => {
   const doctorName = req.params.name;
