@@ -42,7 +42,7 @@ app.use(express.static(buildPath));
 
 async function connectToMongoDB() {
   try {
-    await mongoose.connect("mongodb+srv://anusin1947:jpjrtIHYunFGumhX@pet-car-portal.sug01yj.mongodb.net/hack?retryWrites=true&w=majority&appName=pet-car-portal")
+    await mongoose.connect("mongodb+srv://anusin1947:jpjrtIHYunFGumhX@pet-car-portal.sug01yj.mongodb.net/hack?retryWrites=true&w=majority&appName=pet-car-portal&ssl=true")
     console.log('Successfully connected to MongoDB!');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
@@ -166,11 +166,10 @@ app.post('/CusRegister', async (req, res) => {
     res.status(500).send('Error saving customer.');
   }
 });
-app.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'));
-});
+
 
 app.post('/cusloginNode', async (req, res) => {
+  console.log('Login');
   const { uname, pass } = req.body;
   try {
     const customer = await Customer.findOne({ cusEmail: uname, cusPass: pass });
@@ -234,7 +233,7 @@ app.get('/get-customer-id', (req, res) => {
   res.json({ customerId: req.session.userId });
 });
 
-app.get('/api/doctors', async (req, res) => {
+app.get('/getdoctors', async (req, res) => {
   try {
     console.log('Fetched Doctors');
     const doctors = await Doctor.find({}, 'docName');
@@ -360,5 +359,9 @@ app.put("/appointments/:id", async (req, res) => {
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 

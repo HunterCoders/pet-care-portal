@@ -14,15 +14,23 @@ function BookAppointment() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("/api/doctors");
-        console.log("Fetched doctors:", response.data);
-        setDoctors(response.data);
+        console.log('Fetching Doctors React');
+        const response = await axios.get("/getdoctors");
+        console.log("Response data:", response.data);
+        if (Array.isArray(response.data)) {
+          console.log("Fetched doctors:", response.data);
+          setDoctors(response.data);
+        } else {
+          console.error("Unexpected response data:", response.data);
+          setDoctors([]);  // Default to an empty array if data is not an array
+        }
       } catch (error) {
         console.error("Error fetching doctors:", error);
+        setDoctors([]);  // Default to an empty array in case of error
       }
     };
     fetchDoctors();
-  }, []);
+  },[]); // Empty dependency array, so it runs only once on component mount
 
   const checkParams = (event) => {
     setErr("");
@@ -43,7 +51,7 @@ function BookAppointment() {
     <>
       <form
         onSubmit={checkParams}
-        action="http://localhost:3001/createAppt"
+        action="/createAppt"
         method="post"
         className="register-form"
       >
@@ -110,7 +118,7 @@ function BookAppointment() {
             className="registered"
             style={{ color: "red", textAlign: "center" }}
           >
-            The doctor is booked for the day!! Choose other date
+            The doctor is booked for the day!! Choose another date
           </div>
         )}
       </form>

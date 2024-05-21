@@ -53,16 +53,16 @@
 }
 
 /* Styling for gradient balls */
-.gradient-ball {
+/* .gradient-ball {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   position: absolute;
   animation: moveGradientBall 5s ease-in-out infinite;
 }
-
+*/
 /* Gradient styles */
-.gradient-ball:nth-child(1) {
+/* .gradient-ball:nth-child(1) {
   background: radial-gradient(circle at 10% 10%, #00d0ff, transparent);
   --translate-x: 20px;
   --translate-y: 20px;
@@ -180,4 +180,26 @@
   background: radial-gradient(circle at 40% 10%, #66cc00, transparent);
   --translate-x: -10px;
   --translate-y: 40px;
+} */
+
+body {
+  background: url('background_image.jpg');
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#root {
+  padding: 20px;
+}
+
+.card {
+  background-color: #dd7b3f;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
 }

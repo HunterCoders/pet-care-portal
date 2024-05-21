@@ -1,5 +1,6 @@
 .container {
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+
   justify-content: center;
   align-items: center;
   margin: 50px auto;
@@ -95,4 +96,8 @@ h1 {
 
 .selected-food button:hover {
   background-color: #0056b3;
+}
+
+.selected-food button {
+  background-color: #00264f;
 }

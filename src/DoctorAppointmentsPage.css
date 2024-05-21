@@ -2,7 +2,8 @@
 
 .container {
     margin-top: 50px;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
+
 
     
 
@@ -14,11 +15,11 @@
   }
   
   .completed {
-    background-color: rgba(144, 238, 144, 0.105);
+    background-color: rgba(30, 207, 30, 0.525);
   }
   
   .pending {
-    background-color: rgba(240, 128, 128, 0.115);
+    background-color: rgba(223, 23, 23, 0.491);
   }
   
   h1 {
